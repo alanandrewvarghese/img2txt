@@ -5,6 +5,7 @@ REQUIRED_KEYS = [
     "extracted_bible_verse_malayalam",
     "bible_verse_english_translation",
     "alternative_text_for_main_content",
+    "confidence_level",
 ]
 
 DEFAULT_TITLE = "Trinity Catholic Media"
@@ -104,6 +105,7 @@ def parse_and_format_gemini_output(output_str):
                 data.get("bible_verse_english_translation")
             ),
             "alt_text": format_alt_text(data.get("alternative_text_for_main_content")),
+            "confidence_level": data.get("confidence_level", "low").lower(),
         }
     except Exception as e:
         print(f"Error formatting output: {e}")
