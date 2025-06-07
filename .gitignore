@@ -86,3 +86,6 @@ Desktop.ini
 
 # Google API keys (if any)
 *.json
+
+# old codebase files
+version-0/
